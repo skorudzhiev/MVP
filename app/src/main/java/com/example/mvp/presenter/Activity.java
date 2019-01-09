@@ -2,17 +2,26 @@ package com.example.mvp.presenter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
-import com.example.mvp.view.mainView.MainView;
+import com.example.mvp.view.mainView.ViewOfTheActivity;
+import com.example.mvp.view.mainView.ViewOfTheActivityInterface;
 
-public class MainActivity extends AppCompatActivity {
+public class Activity extends AppCompatActivity
+        implements ViewOfTheActivityInterface.ClickListener {
 
-    private MainView mainView;
+    private ViewOfTheActivity viewOfTheActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainView = new MainView(getLayoutInflater(), null);
-        setContentView(mainView.getRootView());
+        viewOfTheActivity = new ViewOfTheActivity(getLayoutInflater(), null);
+        viewOfTheActivity.setListener(this);
+        setContentView(viewOfTheActivity.getRootView());
+    }
+
+    @Override
+    public void ButtonClick() {
+        Toast.makeText(this, "The Button was clicked", Toast.LENGTH_SHORT).show();
     }
 }
