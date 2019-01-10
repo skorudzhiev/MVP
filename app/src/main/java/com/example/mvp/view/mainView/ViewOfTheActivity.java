@@ -20,7 +20,7 @@ public class ViewOfTheActivity implements ViewOfTheActivityInterface {
         button = rootView.findViewById(R.id.button);
         button.setOnClickListener(view -> {
             if (listener != null) {
-                listener.ButtonClick();
+                listener.buttonClick();
             }
         });
     }
