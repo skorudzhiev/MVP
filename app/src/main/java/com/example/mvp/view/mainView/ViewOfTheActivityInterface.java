@@ -5,7 +5,7 @@ import com.example.mvp.view.BaseView;
 public interface ViewOfTheActivityInterface extends BaseView {
 
     interface ClickListener {
-        void ButtonClick();
+        void buttonClick();
     }
 
     void setListener(ClickListener clickListener);
