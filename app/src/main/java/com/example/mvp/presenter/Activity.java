@@ -21,7 +21,7 @@ public class Activity extends AppCompatActivity
     }
 
     @Override
-    public void ButtonClick() {
+    public void buttonClick() {
         Toast.makeText(this, "The Button was clicked", Toast.LENGTH_SHORT).show();
     }
 }
